@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:20:31 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/07 13:09:26 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:49:25 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,23 @@ static int	valid_inputs(char *argv)
 int	input_check(char *argv[])
 {
 	int	i;
+	int	j;
+	int space;
 
 	i = 1;
 	while (argv[i])
 	{
+		space = 0;
 		if (argv[i][0] == '\0' || !valid_inputs(argv[i]))
+			return (0);
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			if (argv[i][j] == ' ')
+				space = 1;
+			j++;
+		}
+		if (space && i > 1)
 			return (0);
 		i++;
 	}

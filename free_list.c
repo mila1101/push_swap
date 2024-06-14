@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:55:49 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/12 15:07:41 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:37:21 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,23 @@ void	free_list(t_node **first, t_node **last)
 void	free_stack(t_node **stack)
 {
 	t_node	*temp;
-	t_node	*curr;
+	//t_node	*curr;
 
-	if (*stack == NULL)
-		return ;
-	curr = *stack;
-	while (curr != NULL)
+	//if (*stack == NULL)
+	//	return ;
+	//curr = *stack;
+	//while (curr != NULL)
+	//{
+	//	temp = curr;
+	//	curr = curr->next;
+	//	free(temp);
+	//}
+	//*stack = NULL;
+	while (*stack != NULL)
 	{
-		temp = curr;
-		curr = curr->next;
+		temp = *stack;
+		*stack = (*stack)->next;
 		free(temp);
 	}
-	*stack = NULL;
 }
+

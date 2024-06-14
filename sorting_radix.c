@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:15:28 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/11 15:51:23 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:25:24 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ void	put_new_index(t_node **stack_a)
 		}
 		curr_c = curr_c->next;
 	}
+	free_stack(&clone);
 }
 
 static void	sort_bits(t_node **stack_a, t_node **stack_b, int bit)

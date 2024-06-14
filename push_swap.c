@@ -6,12 +6,11 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:21:10 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/12 15:07:24 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:50:22 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	s_print(t_node *stack)
 {
@@ -33,6 +32,7 @@ void	sort_type(t_node **stack_a, t_node **stack_b, int i)
 
 	a_stack = *stack_a;
 	b_stack = *stack_b;
+	//s_print(a_stack);
 	if (!sorted_stack(a_stack))
 	{
 		if (i == 2)
