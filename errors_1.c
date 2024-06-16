@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:20:31 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/14 17:49:25 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/15 18:44:27 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	input_check(char *argv[])
 {
 	int	i;
 	int	j;
-	int space;
+	int	space;
 
 	i = 1;
 	while (argv[i])

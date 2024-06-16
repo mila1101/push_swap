@@ -6,24 +6,24 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:21:10 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/14 17:50:22 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:49:42 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	s_print(t_node *stack)
-{
-	t_node	*temp;
+//void	s_print(t_node *stack)
+//{
+//	t_node	*temp;
 
-	temp = stack;
-	while (temp != NULL)
-	{
-		printf("%lld ", temp->x);
-		temp = temp->next;
-	}
-	printf("\n");
-}
+//	temp = stack;
+//	while (temp != NULL)
+//	{
+//		printf("%lld ", temp->x);
+//		temp = temp->next;
+//	}
+//	printf("\n");
+//}
 
 void	sort_type(t_node **stack_a, t_node **stack_b, int i)
 {
@@ -32,7 +32,6 @@ void	sort_type(t_node **stack_a, t_node **stack_b, int i)
 
 	a_stack = *stack_a;
 	b_stack = *stack_b;
-	//s_print(a_stack);
 	if (!sorted_stack(a_stack))
 	{
 		if (i == 2)
@@ -46,8 +45,6 @@ void	sort_type(t_node **stack_a, t_node **stack_b, int i)
 		else if (i > 5)
 			radix_sort(&a_stack, &b_stack);
 	}
-		//printf("this is the end result: ");
-		//s_print(a_stack);
 }
 
 static void	get_stack(t_node **a, t_node **b, int argc, char *argv[])
@@ -63,7 +60,6 @@ static void	get_stack(t_node **a, t_node **b, int argc, char *argv[])
 	i = node_counter(*a);
 	give_index(*a);
 	sort_type(a, b, i);
-
 }
 
 int	main(int argc, char *argv[])
@@ -71,6 +67,8 @@ int	main(int argc, char *argv[])
 	t_node	*a_stack;
 	t_node	*b_stack;
 
+	if (!argv[1])
+		return (1);
 	b_stack = NULL;
 	if (input_check(argv) && double_space_check(argv))
 	{
@@ -80,7 +78,6 @@ int	main(int argc, char *argv[])
 	}
 	else
 		print_error();
-	free_stack(&a_stack);
-	free_stack(&b_stack);
+	free_final_stack(&a_stack);
 	return (0);
 }

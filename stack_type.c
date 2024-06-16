@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:26:14 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/14 17:28:06 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/16 13:04:20 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,9 @@ t_node	*quoted_stack(char *argv[])
 	}
 	if (check_double_nums(first) || i < 1)
 	{
-		print_error();
 		free_temp(temp);
 		free_list(&first, &last);
-		return (NULL);
+		print_error();
 	}
 	free_temp(temp);
 	return (first);
@@ -72,9 +71,8 @@ t_node	*stack_a(int argc, char *argv[])
 	}
 	if (check_double_nums(first))
 	{
-		print_error();
 		free_list(&first, &last);
-		return (NULL);
+		print_error();
 	}
 	return (first);
 }

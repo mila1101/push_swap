@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:44:00 by msoklova          #+#    #+#             */
-/*   Updated: 2024/06/14 14:03:23 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/06/16 11:10:09 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	add_list(t_node **last, int value)
 
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
-	{
 		exit (1);
-		return ;
-	}
 	new_node->x = value;
 	new_node->next = NULL;
 	if (*last == NULL)
